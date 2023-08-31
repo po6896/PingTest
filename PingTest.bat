@@ -1,6 +1,19 @@
 @echo off
 setlocal
 
+
+
+REM 管理者として実行されているかチェック
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo このスクリプトを実行するには管理者権限が必要です。
+    pause
+    exit
+)
+
+REM ここからバッチファイルの処理を記述
+REM echo このバッチファイルは管理者として実行されています。
+
 REM Pingを送信するIPアドレス
 set "targetIP=www.google.com"
 
