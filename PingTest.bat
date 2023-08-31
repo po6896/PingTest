@@ -1,7 +1,7 @@
 @echo off
 setlocal
-
-
+REM 疎通チェックバッチファイル
+REM 対象 DB WEB Engine x 2 のIP
 
 REM 管理者として実行されているかチェック
 net session >nul 2>&1
@@ -22,9 +22,9 @@ ping -n 1 %targetIP% > nul
 
 REM 変数xの値に応じてメッセージを表示
 if %errorlevel%==0 (
-    echo 応答がありました。IPアドレス %targetIP% はオンラインです.
+    echo 応答がありました。DBサーバー アドレス %targetIP% はオンラインです.
 ) else (
-    echo 応答がありませんでした。IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
+    echo 応答がありませんでした。サーバー IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
 )
 
 REM Pingを送信するIPアドレス
@@ -35,9 +35,9 @@ ping -n 1 %targetIP% > nul
 
 REM 変数xの値に応じてメッセージを表示
 if %errorlevel%==0 (
-    echo 応答がありました。IPアドレス %targetIP% はオンラインです.
+    echo 応答がありました。WEBサーバー IPアドレス %targetIP% はオンラインです.
 ) else (
-    echo 応答がありませんでした。IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
+    echo 応答がありませんでした。WEBサーバー IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
 )
 
 REM Pingを送信するIPアドレス
@@ -48,9 +48,9 @@ ping -n 1 %targetIP% > nul
 
 REM 変数xの値に応じてメッセージを表示
 if %errorlevel%==0 (
-    echo 応答がありました。IPアドレス %targetIP% はオンラインです.
+    echo 応答がありました。Engineサーバー1 IPアドレス %targetIP% はオンラインです.
 ) else (
-    echo 応答がありませんでした。IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
+    echo 応答がありませんでした。Engineサーバー1 IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
 )
 
 REM Pingを送信するIPアドレス
@@ -61,9 +61,9 @@ ping -n 1 %targetIP% > nul
 
 REM 変数xの値に応じてメッセージを表示
 if %errorlevel%==0 (
-    echo 応答がありました。IPアドレス %targetIP% はオンラインです.
+    echo 応答がありました。Engineサーバー2 IPアドレス %targetIP% はオンラインです.
 ) else (
-    echo 応答がありませんでした。IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
+    echo 応答がありませんでした。Engineサーバー2 IPアドレス %targetIP% はオフラインか応答が遅い可能性があります.
 )
 
 REM 何かメッセージを表示
